@@ -1,0 +1,424 @@
+:root {
+    --color-dark-blue: #161B22;
+    --color-blue: #414D5D;
+    --color-bright-green: #6FEE68;
+    --scale: 0.1;
+}
+
+@font-face {
+	font-family: 'Jura';
+    font-style: normal;
+	font-weight: normal;
+	src: url(../sources/fonts/Jura/Jura-VariableFont_wght.ttf); 
+}
+@font-face {
+	font-family: 'JetBrains'; 
+    font-style: normal;
+	font-weight: normal;
+	src: url(../sources/fonts/JetBrains_Mono/JetBrainsMono-VariableFont_wght.ttf); 
+}
+@font-face {
+	font-family: 'JetBrains italic'; 
+    font-style: italic;
+	font-weight: normal;
+	src: url(../sources/fonts/JetBrains_Mono/JetBrainsMono-Italic-VariableFont_wght.ttf); 
+}
+@font-face {
+	font-family: 'Sofia Sans'; 
+    font-style: normal;
+	font-weight: normal;
+	src: url(../sources/fonts/Sofia_Sans/SofiaSans-VariableFont_wght.ttf); 
+}
+@font-face {
+	font-family: 'Sofia Sans italic'; 
+    font-style: italic;
+	font-weight: normal;
+	src: url(../sources/fonts/Sofia_Sans/SofiaSans-Italic-VariableFont_wght.ttf); 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'JetBrains';
+}
+
+/* --------- NORMALIZE ------------- */
+
+body {
+    /* background-color: #eee; */
+    width: 100%;
+}
+a {
+    text-decoration: none;
+    color: black;
+
+}
+a:visited,
+a:active,
+a:hover {
+    color: transparent;
+}
+
+/* --------- FOR ALL ------------- */
+
+.section {
+    width: 100%;
+    height: 150vh;
+}
+.content {
+    width: 100%;
+    padding: 50px 30px;
+}
+.container {
+    width: 100%;
+    padding: 0 30px 0 90px;
+}
+
+
+
+/* --------- NENU ------------- */
+.nav-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: white;
+    background-color: transparent;
+    border-bottom: 2px solid transparent;
+    transition: background-color 1s linear, border-bottom 1s linear;
+    z-index: 1000;
+}
+.scrolled {
+    background-color: var(--color-dark-blue);
+    border-bottom: 2px solid var(--color-bright-green);
+    transition: background-color 1s linear, border-bottom 1s linear;
+}
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 30px;
+}
+.logo-list-box {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 15px;
+}
+.logo-list-box img {
+    width: 50px;
+}
+.nav-menu {
+    width: 100%;
+}
+.nav-menu ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+    padding-right: 30px;
+    height: 100%;
+}
+.nav-menu li {
+    display: block;
+    list-style-type: none;
+    text-transform: uppercase;
+}
+.nav-menu li a {
+    color: white;
+}
+.language-box {
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+    align-items: center;
+}
+
+/* -------- HEADER --------- */
+
+.header-main {
+    width: 100%;
+    height: 850px;
+    text-transform: uppercase;
+    background-image: url(../sources/img/headers/fon-materik.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.header-main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 150px;
+    padding-top: 200px;
+    color: white;
+
+}
+.header-logo {
+    width: 400px;
+}
+.header-logo-box {
+    width: 150px;
+    margin: 0 auto;
+}
+.header-logo-box img {
+    width: 100%;
+}
+.header-logo h1 {
+    text-align: center;
+}
+
+
+.header-slogan {
+    width: 100%;
+    padding: 30px;
+    font-size: 26px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.header-slogan-box {
+    width: 900px;
+    margin: 0 auto;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.header-slogan_title {
+    color: #6FEE68;
+}
+
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: white;
+    opacity: 0;
+    animation: appearance 6s linear;
+}
+
+@keyframes appearance {
+    0% {
+        opacity: 0;
+        box-shadow: 0 0 0 0 rgba(111, 238, 104, 0.30);
+    }
+    20% {
+        opacity: 1;
+        box-shadow: 0 0 0 0 rgba(111, 238, 104, 0.30);
+    }
+    70% {
+        opacity: 1;
+        box-shadow: 0 0 20px 15px rgba(111, 238, 104, 0.30);
+    }
+    100% {
+        opacity: 0;
+        box-shadow: 0 0 20px 15px rgba(111, 238, 104, 0.30);
+    }
+}
+
+
+/* -------- MAIN --------- */
+
+main {
+    position: relative;
+}
+
+/* -------- NAV PANEL --------- */
+.nav-panel {
+    width: 60px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    background-color: #161B22;
+    opacity: 0;
+    transition: opacity 1s linear;
+    z-index: 100;
+}
+.nav-panel.active {
+    opacity: 1;
+    transition: opacity 1s linear;
+}
+.nav-panel-content {
+    color: white;
+    display: flex;
+    justify-content: center;
+    width: 100vh;
+    gap: 30px;
+    transform: rotate(-90deg);
+    position: absolute;
+    top: 50%;
+    left: -46vh;
+}
+
+.nav-panel-content > * {
+    font-size: 20px;
+    text-transform: uppercase;
+}
+.panel-separator {
+    background-color: #6FEE68;
+    width: 3px;
+}
+
+/* -------- SECTION 1 --------- */
+.section-1 {
+    position: relative;
+    background-color: aliceblue;
+    padding: 120px 0;
+    height: auto;
+    background-image: url(../sources/img/backgrounds/bg-2.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    z-index: 0;
+}
+.section-1::before {
+    content: '';
+    background-color: rgba(255, 255, 255, 0.8);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.about-header {
+    width: 50%;
+    font-size: 26px;
+    text-transform: uppercase;
+}
+
+.aboute-content {
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 30px;
+    row-gap: 70px;
+}
+.aboute-item {
+    width: 22%;
+    /* border: 1px solid red; */
+}
+.aboute-item:nth-child(n + 5) {
+    width: 30%;
+}
+.aboute-item_box {
+    border: 1px solid #414D5D;
+    border-bottom-right-radius: 30px;
+    border-top-left-radius: 30px;
+    padding: 50px 30px;
+    height: 100%;
+    text-align: center;
+    transform: skewX(-10deg);
+    background: linear-gradient(-135deg, rgba(65, 77, 93, 0.5), rgba(255, 255, 255, 1));
+}
+.aboute-item_text {
+    transform: skewX(10deg);
+}
+.aboute-item_box:hover {
+    border-color: #6FEE68;
+    background: #414D5D;
+    color: white;
+}
+
+/* -------- SECTION 2 --------- */
+
+.section-2 {
+    height: auto;
+    /* background-color: #eee; */
+    position: relative;
+    padding-bottom: 150px;
+    z-index: 1;
+}
+
+.backgroung-s2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.section-2 .container {
+    width: 100%;
+    /* border: 1px solid blue; */
+}
+.science {
+    width: 100%;
+    
+    display: flex;
+    /* border: 1px solid red; */
+    position: relative;
+}
+.science > * {
+    /* border: 1px solid green; */
+}
+
+.science-title {
+    position: sticky;
+    top: 150px;
+    width: 40%;
+    height: 200px;
+    margin-top: 200px;
+    font-size: 26px;
+    text-transform: uppercase;
+    color: white;
+
+}
+.science-content {
+    position: relative;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    top: 400px;
+
+}
+.science-item {
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid #414D5D;
+    height: 150px;
+    border-bottom-right-radius: 30px;
+    border-top-left-radius: 30px;
+    position: relative;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+.science-item_text {
+    width: 80%;
+    vertical-align: middle;
+    padding-top: 30px;
+}
+
+.science-item a {
+    display: block;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 80px;
+}
+
+.science-item a img {
+    width: 100%;
+}
+
+
+/* -------- SECTION 3 --------- */
+
+/* -------- SECTION 4 --------- */
+
+
+
+/* -------- SECTION 5 --------- */
+
+/* -------- SECTION 6 --------- */
+
+
+
+/* -------- SECTION 7 --------- */
+
+/* -------- SECTION 8 --------- */
