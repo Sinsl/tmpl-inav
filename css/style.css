@@ -421,7 +421,7 @@ main {
     background-size: cover; */
     z-index: 0;
 }
-.section-3::before {
+/* .section-3::before {
     content: '';
     position: absolute;
     width: 100%;
@@ -431,7 +431,7 @@ main {
     background-color: rgba(255, 255, 255, 0.8);
 
     z-index: -1;
-}
+} */
 .study-header {
     position: sticky;
     top: 150px;
