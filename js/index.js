@@ -88,9 +88,46 @@ const navPanel = () => {
     }
 }
 
+const sectionS1 = $(".section-1");
+console.log(sectionS1)
+const r1p1 = $(".r1p1");
+const r2p1 = $(".r2p1");
+const drawLineArr = Array.from(sectionS1.querySelectorAll(".draw-line-point"));
+
+const backgroundS1 = (top) => {
+    const s1rgb = 255 - Math.round((680 - top) * 0.1231);
+    sectionS1.style.backgroundColor = `rgb(${s1rgb}, ${s1rgb}, ${s1rgb})`; 
+}
+
+const movePointsS1 = (top) => {
+    const deff = 680 - top;
+    r1p1.style.transform = `rotate(${deff / 2}deg)`;
+    r2p1.style.transform = `rotate(${deff / 3}deg)`;
+    drawLineArr.forEach((el, idx) => {
+        if (idx % 2) {
+            el.style.left = `calc(50% + 50px + ${Math.round(deff / 5)}px)`;
+        } else {
+            el.style.left = `calc(50% - 50px - ${Math.round(deff / 2)}px)`;
+        }
+    })
+}
+const moveS1 = () => {
+    const topS1 = sectionS1.getBoundingClientRect().top;
+    // console.log(topS1)
+    if (topS1 < 680 && topS1 > 150) {
+        backgroundS1(topS1)
+    }
+    if (topS1 < 600 && topS1 > -300) {
+        movePointsS1(topS1)
+    }
+
+    
+}
+
 document.addEventListener('scroll', () => {
     mevuBackgroung();
     navPanel();
+    moveS1();
 })
 
 VANTA.NET({

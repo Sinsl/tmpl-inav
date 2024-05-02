@@ -263,16 +263,17 @@ main {
 /* -------- SECTION 1 --------- */
 .section-1 {
     position: relative;
-    background-color: aliceblue;
+    background-color: rgb(255, 255, 255);
     padding: 120px 0;
     height: auto;
-    background-image: url(../sources/img/backgrounds/bg-2.jpg);
+    overflow: hidden;
+    /* background-image: url(../sources/img/backgrounds/bg-2.jpg);
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
-    z-index: 0;
+    z-index: 0; */
 }
-.section-1::before {
+/* .section-1::before {
     content: '';
     background-color: rgba(255, 255, 255, 0.8);
     position: absolute;
@@ -281,7 +282,7 @@ main {
     top: 0;
     left: 0;
     z-index: -1;
-}
+} */
 .about-header {
     width: 50%;
     font-size: 26px;
@@ -289,16 +290,19 @@ main {
 }
 
 .aboute-content {
-    margin-top: 100px;
+    position: relative;
+    margin-top: 150px;
     width: 100%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     column-gap: 30px;
-    row-gap: 70px;
+    row-gap: 100px;
+    z-index: 1;
 }
 .aboute-item {
     width: 22%;
+    cursor: pointer;
     /* border: 1px solid red; */
 }
 .aboute-item:nth-child(n + 5) {
@@ -308,14 +312,14 @@ main {
     border: 1px solid #414D5D;
     border-bottom-right-radius: 30px;
     border-top-left-radius: 30px;
-    padding: 50px 30px;
+    padding: 100px 30px;
     height: 100%;
     text-align: center;
-    transform: skewX(-10deg);
+    /* transform: skewX(-10deg); */
     background: linear-gradient(-135deg, rgba(65, 77, 93, 0.5), rgba(255, 255, 255, 1));
 }
 .aboute-item_text {
-    transform: skewX(10deg);
+    /* transform: skewX(10deg); */
 }
 .aboute-item_box:hover {
     border-color: #6FEE68;
@@ -323,11 +327,105 @@ main {
     color: white;
 }
 
+/* -------- SECTION 1 DRAW --------- */
+.draw-s1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+.draw-round {
+    position: relative;
+    top: 100px;
+    left: calc(100% - 100px - 300px);
+    border: 4px solid rgba(0, 0, 0, 0.07);
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
+.draw-round-line-point {
+    position: absolute;
+    top: calc(50% - 5px);
+    left: -6px;
+    width: calc(100% + 6px * 2);
+    height: 10px;
+    /* background-color: rgba(0, 0, 0, 0.05); */
+}
+.r1p1 {
+    transform: rotate(40deg);
+}
+.r2p1 {
+    transform: rotate(90deg);
+}
+.draw-round-point,
+.draw-line-point {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    background-color: #414D5D;
+    border-radius: 50%;
+}
+.p2 {
+    left: calc(50% - 5px);
+}
+.p3 {
+    left: calc(100% - 10px);
+}
+
+.draw-line {
+    position: absolute;
+    top: calc(50% - 2px);
+    right: calc(-150vh + 150px - 2px);
+    width: 300vh;
+    height: 4px;
+    background-color: rgba(0, 0, 0, 0.07);
+}
+.l1 {
+    transform: rotate(-135deg);
+}
+.l2 {
+    transform: rotate(-90deg);
+}
+.l3 {
+    transform: rotate(-45deg);
+}
+.draw-line > * {
+    background-color: #6FEE68;
+    top: -3px;
+}
+.l1p1 {
+    left: calc(50% - 50px);
+}
+.l1p2 {
+    left: calc(50% + 50px);
+}
+.l2p1 {
+    left: calc(50% - 50px);
+}
+.l2p2 {
+    left: calc(50% + 50px);
+}
+.l3p1 {
+    left: calc(50% - 50px);
+}
+.l3p2 {
+    left: calc(50% + 50px);
+}
+.l4p1 {
+    left: calc(50% - 50px);
+}
+.l4p2 {
+    left: calc(50% + 50px);
+}
+
+
 /* -------- SECTION 2 --------- */
 
 .section-2 {
     height: auto;
-    /* background-color: #eee; */
+    background-color: #414D5D;
     position: relative;
     padding-bottom: 150px;
     z-index: 1;
