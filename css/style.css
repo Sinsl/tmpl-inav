@@ -361,10 +361,12 @@ main {
 }
 .draw-round-point,
 .draw-line-point {
-    width: 10px;
-    height: 10px;
+    width: 14px;
+    height: 14px;
     position: absolute;
-    background-color: #414D5D;
+    /* background-color: #98a9bf; */
+    /* background-image: radial-gradient(at 30% 30%, circle, #a4c7ec, #000); */
+    background: radial-gradient(circle farthest-side at 30%, #a4c7ec, #414D5D);
     border-radius: 50%;
 }
 .p2 {
@@ -392,8 +394,9 @@ main {
     transform: rotate(-45deg);
 }
 .draw-line > * {
-    background-color: #6FEE68;
-    top: -3px;
+    /* background-color: #6FEE68; */
+    background: radial-gradient(circle farthest-side at 30%, #6FEE68, #246430);
+    top: -4px;
 }
 .l1p1 {
     left: calc(50% - 50px);
@@ -556,8 +559,9 @@ main {
     align-items: center;
     gap: 40px;
     background: linear-gradient(135deg, #fff, #bcd9c1);
-    border-bottom-right-radius: 30px;
-    border-top-left-radius: 30px;
+    /* border-bottom-right-radius: 30px;
+    border-top-left-radius: 30px; */
+    border-radius: 30px;
     padding: 80px 40px;
     box-shadow: 4px 4px 10px 5px rgba(0, 0, 0, 0.3);
 }
@@ -565,7 +569,7 @@ main {
     top: 310px;
 }
 .study-item:nth-child(3) {
-    top: 340px;
+    top: 310px;
 }
 .study-item > * {
     width: calc((100% - 40px) / 2);

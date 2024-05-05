@@ -117,7 +117,7 @@ const moveS1 = () => {
     if (topS1 < 680 && topS1 > 150) {
         backgroundS1(topS1)
     }
-    if (topS1 < 600 && topS1 > -300) {
+    if (topS1 < 600 && topS1 > -600) {
         movePointsS1(topS1)
     }
 
